@@ -1,34 +1,41 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-import HelloWorld from '@/components/HelloWorld.vue';
-import Home from '../views/Home.vue';
-import About from '../views/About.vue';
-import Contact from '../views/Contact.vue';
+import Været from '../views/Været.vue'
+import Home from '../views/Home.vue'
+import About from '../views/About.vue'
+import Contact from '../views/Contact.vue'
 
 Vue.use(VueRouter);
 
-export default new VueRouter({
-  routes: [
+const routes = [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/home',
       name: 'Home',
       component: Home
     },
     {
-      path: '/about',
+      path: '/About',
       name: 'About',
       component: About
     },
     {
-      path: '/contact',
+      path: '/Contact',
       name: 'Contact',
       component: Contact
-    } 
-  ]
-})
+    },
+    {
+      path: '/Været',
+      name: 'Været',
+      component: Været
+    }
+];
+
+
+const router = new VueRouter({
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes
+});
+
+export default router;
